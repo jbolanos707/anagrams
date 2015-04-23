@@ -1,11 +1,11 @@
 class String
-  define_method(:anagrams) do |word|
-    sorted_word = word.split("").sort().join()
+  define_method(:anagrams) do |words|
+    sorted_word = words.at(0).split("").sort().join()
     sorted_target = self.split("").sort().join()
     if sorted_word == sorted_target
-      word
+      words
     else
-      ""    
+      []
     end
   end
 end
