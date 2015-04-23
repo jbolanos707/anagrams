@@ -9,4 +9,8 @@ describe('String#anagrams') do
   it('does not return the word if the word is not an anagram') do
     expect('cat'.anagrams(['spot'])).to(eq([]))
   end
+
+  it('returns the anagrams in a two word list') do
+    expect('cat'.anagrams(['act', 'spot'])).to(eq(['act']))
+  end
 end
