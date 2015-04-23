@@ -13,4 +13,8 @@ describe('String#anagrams') do
   it('returns the anagrams in a two word list') do
     expect('cat'.anagrams(['act', 'spot'])).to(eq(['act']))
   end
+
+  it('returns the anagrams in a list') do
+    expect('cat'.anagrams(['act','sp', 'cct', 'tac'])).to(eq(['act','tac']))
+  end
 end

@@ -1,20 +1,11 @@
 class String
   define_method(:anagrams) do |words|
-    sorted_target = self.split("").sort().join()
+    sorted_target = self.split("").sort().join() #the word the user enters which is then sorted
     anagrams = []
-    if words.length() == 1
-      first_sorted_word = words.at(0).split("").sort().join()
-      if first_sorted_word == sorted_target
-        anagrams.push(words.at(0))
-      end
-    elsif words.length() == 2
-      first_sorted_word = words.at(0).split("").sort().join()
-      second_sorted_word = words.at(1).split("").sort().join()
-      if first_sorted_word == sorted_target
-        anagrams.push(words.at(0))
-      end
-      if second_sorted_word == sorted_target
-        anagrams.push(words.at(1))
+    words.each() do |word| #words refers to the list of words the user inputs as anagrams to the word
+      sorted_word = word.split("").sort().join() #the anagrams the user inputs which is then sorted
+      if sorted_word == sorted_target
+        anagrams.push(word)
       end
     end
     anagrams
